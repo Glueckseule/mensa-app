@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily</title>
+    <link rel="stylesheet" href="vendors/fontello/css/fontello.css">
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="icon" href="resources/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="background">
+  <header>
+    <h1>Mensaplan</h1> <button type="button" name="button">Bewertungen exportieren</button>
+  </header>
+  <section>
+    <ul class="day-selector">
+      <li class="button" data-day="monday">Montag</li>
+      <li class="button" data-day="tuesday" class="selected">Dienstag</li>
+      <li class="button" data-day="wednesday">Mittwoch</li>
+      <li class="button" data-day="thursday">Donnerstag</li>
+      <li class="button" data-day="friday">Freitag</li>
+    </ul>
+    <ul class="preference-selector avoid-clicks">
+      <li class="button-pref" data-food-type="Vegetarisch">Vegetarisch</li>
+      <li class="button-pref" data-food-type="Vegan">Vegan</li>
+      <li class="button-pref" data-food-type="Rind">Rind</li>
+      <li class="button-pref" data-food-type="Schwein">Schwein</li>
+      <li class="button-pref" data-food-type="Geflügel">Huhn</li>
+    </ul>
+    <ul class="daily-menu"></ul>
+  </section>
+
+  <!-- HTML part for review window -->
+  <section id="foreground" class="hidden">
+    <div id="review-input">
+      <div id="review-headline">
+        <span id="menu-name"></span>
+        <span id="date-button">Datum einfügen</span>
+        <div id="star-rating">
+          <span class="fa fa-star" data-id="1"></span>
+          <span class="fa fa-star" data-id="2"></span>
+          <span class="fa fa-star" data-id="3"></span>
+          <span class="fa fa-star" data-id="4"></span>
+          <span class="fa fa-star" data-id="5"></span>
+        </div>
+      </div>
+      <textarea name="user-review" id="review-text"></textarea>
+      <div id="interaction-buttons">
+        <div id="close">Schließen</div>
+        <div id="save">Speichern</div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/template" id="menu-entry">
+    <li class="entry" data-id="<%= id %>" data-category="<%= category %>">
+      <span class="data category"><%= cost.students %> €</span>
+      <span class="data title"><%= name %></span>
+      <span class="data score">
+        <span class="votes downvotes"><%= labels %></span>
+      </span>
+    </li>
+  </script>
+
+  <script src="vendors/request/request.js"></script>
+  <script src="vendors/underscore/underscore-min.js"></script>
+  <script src="resources/js/Daily.js"></script>
+  <script src="resources/js/DailyDataProvider.js"></script>
+  <script src="resources/js/DailyViewController.js"></script>
+  <script src="resources/js/DailyViewFilter.js"></script>
+  <script>
+    Daily.init();
+  </script>
+</body>
+
+</html>

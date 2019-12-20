@@ -1,0 +1,303 @@
+@font-face {
+    font-family: "RalewayRegular";
+    src: url("./fonts/Raleway/Raleway-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 1);
+    font-family: 'RalewayRegular';
+    color: #333;
+}
+
+header {
+    width: 90%;
+    height: 70px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #EE4037;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 70px;
+    color: #EE4037;
+}
+
+section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+button {
+  padding: 5px;
+  background-color: white;
+  color: #EE4037;
+  font-variant: small-caps;
+  cursor: pointer;
+  margin-top: 70px;
+}
+
+#review-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+#review-headline {
+  display: inline
+}
+
+#menu-name {
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+
+  cursor: default;
+}
+
+#star-rating {
+  float: right;
+  font-size: 30px;
+  line-height: 50px;
+
+  cursor: pointer;
+}
+
+#interaction-buttons {
+  display: inline;
+}
+
+#review-text {
+  height: 600px;
+  font-size: 20px;
+}
+
+#foreground {
+  z-index: 1;
+  position: absolute;
+  left: 77px;
+  background: #ee4037;
+}
+
+#close,
+#save,
+#date-button {
+  float: right;
+  margin-left: 10px;
+  padding: 5px;
+  background-color: white;
+  color: #EE4037;
+  font-variant: small-caps;
+
+  cursor: pointer;
+}
+
+#date-button {
+  float: none;
+  font-size: 30px;
+  line-height: 50px;
+  margin-left: 60px;
+}
+
+.day-selector,
+.preference-selector {
+    width: 100%;
+    height: 5%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.day-selector li,
+.preference-selector li {
+    display: block;
+    float: left;
+    width: 18%;
+    margin: 0.5%;
+    padding: 0.5%;
+    list-style-type: none;
+    background-color: #FFF;
+    text-align: center;
+    color: #EE4037;
+}
+
+.day-selector li:hover:not(.selected),
+.preference-selector li:hover:not(.selected) {
+    background-color: #EE4037;
+    opacity: 0.9;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.day-selector li.selected,
+.preference-selector li.selected {
+    background-color: #EE4037;
+    color: #FFF;
+}
+.preference-selector li.selected:hover {
+  cursor: pointer;
+}
+
+.daily-menu {
+    display: block;
+    clear: left;
+    width: 100%;
+    margin: 2% auto;
+    padding: 0;
+}
+
+.daily-menu .entry {
+    position: relative;
+    display: block;
+    float: left;
+    width: 23%;
+    height: 225px;
+    margin: 0.5%;
+    padding: 0.5%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 2%;
+    list-style-type: none;
+
+    cursor: pointer;
+}
+
+.daily-menu .entry:hover {
+  opacity: 0.8;
+}
+
+.daily-menu .entry[data-category='Suppe'] {
+    background-color: #BF2C7F;
+}
+
+.daily-menu .entry[data-category='HG1'],
+.daily-menu .entry[data-category='HG2'],
+.daily-menu .entry[data-category='HG3'],
+.daily-menu .entry[data-category='HG4'],
+.daily-menu .entry[data-category='HG5'] {
+    background-color: #EE8D37;
+}
+
+.daily-menu .entry[data-category='B1'],
+.daily-menu .entry[data-category='B2'],
+.daily-menu .entry[data-category='B3'],
+.daily-menu .entry[data-category='B4'],
+.daily-menu .entry[data-category='B5'],
+.daily-menu .entry[data-category='B6'],
+.daily-menu .entry[data-category='B7'] {
+    background-color: #2BB93C;
+}
+
+.daily-menu .entry[data-category='N1'],
+.daily-menu .entry[data-category='N2'],
+.daily-menu .entry[data-category='N3'],
+.daily-menu .entry[data-category='N4'] {
+    background-color: #238791;
+}
+
+.daily-menu .data {
+    display: block;
+    padding: 1%;
+}
+
+.daily-menu .category {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2em;
+    line-height: 1em;
+    color: #FFF;
+}
+
+.daily-menu .title {
+    margin-top: 1em;
+    padding: 0.25em;
+    text-align: center;
+    font-style: italic;
+    color: #FFF;
+}
+
+.daily-menu .cost {
+    margin-top: 1em;
+    padding: 0.25em;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.25em;
+    color: #FFF;
+}
+
+.daily-menu .score {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    color: #FFF;
+    width: 94%;
+}
+
+.daily-menu .score .votes {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}
+
+.checked {
+  color: orange;
+}
+
+.in-background {
+  height: 100%;
+  background-color: #00000059;
+}
+
+@media (max-width: 1400px) {
+  .daily-menu {
+    margin: 5% auto;
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+}
+
+@media (min-width: 990px) {
+  .daily-menu .title {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 880px) {
+  .daily-menu .title {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .daily-menu .title {
+    font-size: 1.75em;
+  }
+}
